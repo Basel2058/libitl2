@@ -1,3 +1,5 @@
+Arabic is Below: 
+
 libitl2: A library for Islamic calendar and prayer times
 ========================================================
 
@@ -49,5 +51,57 @@ AUTHORS
 The original authors of `libitl` can be found in [AUTHORS](AUTHORS). `libitl2`
 is developed and maintained currently by Mohamed A. Bamakhrama.
 
+
+______________________________
+
+libitl2: مكتبة للتقويم الإسلامي ومواقيت الصلاة
+
+libitl2 هي تفرّع (Fork) من
+libitl. يهدف هذا التفرّع في بدايته إلى:
+	•	نقل الشفرة المصدرية من نظام إدارة الإصدارات SVN إلى نظام Git
+	•	تحديث نظام البناء بنقله من autotools إلى cmake
+	•	إجراء تحليل ساكن (Static Analysis) على الشفرة الحالية وإصلاح الأخطاء المكتشفة
+	•	جعل المكتبة متعددة المنصات (أي تعمل أصليًا على أنظمة Unix/Linux وMac وWindows)
+
+التجميع (Compiling)
+
+⸻
+
+لتجميع المكتبة، ستحتاج إلى الأدوات التالية:
+	•	مُصرّف C حديث (مثل GCC أو Clang). تم اختبار بناء المكتبة باستخدام GCC 4.8.1
+	•	أداة cmake (تم اختبارها بالإصدار 2.8.11.2)
+
+لتجميع المكتبة وبرامج العرض التجريبية، نفّذ الأوامر التالية في مجلد itl2:
+
+mkdir build
+cd build
+cmake ..
+make
+./demo_prayer # لتشغيل البرنامج التجريبي لمواقيت الصلاة
+
+التحليل الساكن (Static Analysis)
+
+⸻
+
+نستخدم أداة ccc-analyzer من Clang لإجراء التحليل الساكن. لاستخدام ccc-analyzer، يجب تنفيذ ما يلي:
+
+cmake -DCMAKE_C_COMPILER=/usr/share/clang/scan-build/ccc-analyzer ..
+/usr/share/clang/scan-build/scan-build make
+
+من المهم ملاحظة أن Clang قد يكون مُثبّتًا في مسارات مختلفة على أجهزة مختلفة.
+
+الرخصة (LICENSE)
+
+⸻
+
+تستخدم مكتبة libitl الأصلية رخصة LGPL الموضّحة في ملف LICENSE.
+وتستخدم libitl2 الرخصة نفسها المستخدمة في libitl.
+
+المؤلفون (AUTHORS)
+
+⸻
+
+يمكن العثور على المؤلفين الأصليين لـ libitl في ملف AUTHORS.
+أما libitl2 فيتم تطويرها وصيانتها حاليًا بواسطة محمد أ. بامخرمة.
 
 
